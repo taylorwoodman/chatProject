@@ -1,0 +1,33 @@
+.welcome{
+    display: flex;
+    height: 40px;
+    width: 300px;
+    margin: 10px;
+    font-weight: 400px;
+    font-size: 30px;
+}
+
+.sideBar{
+    width: 350px;
+    height: 1000px;
+    background: white;
+}
+
+.currentUser{
+    display: flex;
+    height: 40px;
+    width: 300px;
+    margin: 20px;
+    font-weight: 400px;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.homeInfo{
+    display: flex;
+    height: 40px;
+    width: 400px;
+    margin: 10px;
+    font-weight: 400px;
+    font-size: 30px;
+}
