@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import {Link}  from "react-router-dom";
+import {Link, withRouter }  from "react-router-dom";
 import "./login.css";
 
 class Login extends React.Component {
@@ -9,7 +9,7 @@ class Login extends React.Component {
 
   this.state = {
     email: '',
-    password: ''
+    password: '',
   }
 }
 
@@ -21,17 +21,31 @@ handleLogin = async() => {
     }
 
     if(body.email && body.password) {
-    await axios.post('/login', body)
-    return this.props.history.push('/home')
+    axios.post('/login', body)
+    .then((response, req) => {
+      console.log(response)
+      axios.get('/loggedIn')
+      .then((response) => {
+        this.props.updateUser(response.data)
+      })
+      console.log(this.state.user)
+      if(response.data.admin === true) {
+        this.props.history.push('/home')
+      } else {
+        this.props.history.push('/userHome')
+      }
+    })
   } else {
     alert('Login incorrect')
     this.props.history.push('/')
   }
+
   } catch (error) {
     console.error(error)
     
   }
 }
+
 
 handleChange = (e) => this.setState({[e.target.name]: e.target.value})
 
@@ -52,9 +66,7 @@ handleChange = (e) => this.setState({[e.target.name]: e.target.value})
           value={this.state.password}
           onChange={this.handleChange}
            />
-          <Link to="/home">
-            <button className="submit" onClick={this.handleLogin}>Login</button>
-            </Link>
+          <button className="submit" onClick={this.handleLogin}>Login</button>
           <Link to="/signup">
               <button className="submit">Sign Up</button>
             </Link>
@@ -64,4 +76,4 @@ handleChange = (e) => this.setState({[e.target.name]: e.target.value})
   }
 }
 
-export default Login;
+export default withRouter(Login);

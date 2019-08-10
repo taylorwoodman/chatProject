@@ -2,15 +2,18 @@
     display: flex;
     height: 40px;
     width: 300px;
-    margin: 10px;
+    margin: 15px;
     font-weight: 400px;
-    font-size: 30px;
+    font-size: 25px;
 }
+
 
 .sideBar{
     width: 350px;
-    height: 1000px;
+    height: 100vh;
     background: white;
+    font-size: 25px;
+
 }
 
 .currentUser{
@@ -19,7 +22,6 @@
     width: 300px;
     margin: 20px;
     font-weight: 400px;
-    font-size: 30px;
     text-decoration: underline;
 }
 
@@ -29,5 +31,11 @@
     width: 400px;
     margin: 10px;
     font-weight: 400px;
-    font-size: 30px;
+}
+
+.parentHome{
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden; 
+    overflow-y: hidden;
 }

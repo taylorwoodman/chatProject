@@ -4,14 +4,18 @@ import {Link}  from "react-router-dom";
 import "./signup.css";
 
 class Signup extends React.Component {
+constructor(){
 
-  state = {
+  super()
+
+  this.state = {
     firstName: '',
     lastName: '',
     email: '',
     password: '',
     username: ''
   }
+}
 
 handleInput= (e) => this.setState({[e.target.name]: e.target.value } )
 

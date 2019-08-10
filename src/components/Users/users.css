@@ -1,0 +1,41 @@
+.usersContainer{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+    overflow-y: auto;
+    font-size: 25px;
+}
+
+.users{
+    display: flex;
+    align-items: row
+}
+
+.cell{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 200px;
+    height: 40px;
+    font-size: 25px;
+    border: 1px solid black;
+    background: white;
+}
+
+.email{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 400px;
+    height: 40px;
+    font-size: 25px;
+    border: 1px solid black;
+    background: white;
+}
+
+.edit{
+    cursor: pointer;
+    font-size: 20px;
+}

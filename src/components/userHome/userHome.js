@@ -1,27 +1,11 @@
 import React from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import Users from "../Users/users";
-import "./home.css";
+import {Link} from "react-router-dom";
 
-class Home extends React.Component {
+class UserHome extends React.Component{
 
-  componentDidMount = () => {
-    axios.get('/users')
-      .then((response) => {
-        this.props.updateUser(response.data)
-      })
-  };
-
-  handleLogout() {
-    axios.get("/logout");
-  }
-
-  render() {
-    if (!this.props.user) return "user not found"
-
-    return (
-      <div className="parentHome">
+    render(){
+        return(
+            <div className="parentHome">
         <div className="sideBar">
           <div className="welcome">Welcome home, {this.props.user.first_name}!</div>
           <div className="currentUser">User Info</div>
@@ -34,10 +18,11 @@ class Home extends React.Component {
             <button onClick={this.handleLogout}>Logout</button>
           </Link>
         </div>
-        <Users />
+        
       </div>
-    );
-  }
+            
+        )
+    }
 }
 
-export default Home;
+export default UserHome;

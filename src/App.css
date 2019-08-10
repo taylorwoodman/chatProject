@@ -1,17 +1,10 @@
 .App{
 	height: 100vh;
 	width: 100vw;
-	background: #7E8987
-}
-
-.navBar{
-    display: flex;
-    justify-content: flex-end;
-    max-width: 100vw;
-	padding-right: 30px;
-	background: #1C3144;
-    height: 50px;
-    
+    background: #7E8987;
+    font-family: 'Roboto Mono', monospace;
+    overflow-x: hidden; 
+    overflow-y: hidden;
 }
 
 .button{
