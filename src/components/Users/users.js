@@ -2,54 +2,51 @@ import React from "react";
 import axios from "axios";
 import "./users.css";
 
+class Users extends React.Component {
+  constructor() {
+    super();
 
-class Users extends React.Component{
+    this.state = {
+      allUsers: []
+    };
+  }
 
-    constructor(){
-        super()
+  componentDidMount() {
+    axios
+      .get("/allUsers")
+      .then(response => {
+        this.setState({ allUsers: response.data });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
-        this.state = {
-            allUsers: []
-        }
-    }
-
-componentDidMount(){
-    axios.get('/allUsers')
-    .then(response => {
-        console.log(response.data)
-        this.setState({allUsers: response.data})
-        
-    })
-    .catch(error => {
-        console.log(error)
-    })
-}
-
-handleEdit(){
-    
-}
-
-
-    render(){
-        const users = this.state.allUsers.map((users) => {
-            return (
-            <div className="users">
-                <div className="cell"> {users.first_name} </div>
-                <div className="cell"> {users.last_name} </div>
-                <div className="email"> {users.email} </div>
-                <div className="cell"> {users.username} </div>
-                <button className="edit">Edit User</button>
-            </div>
-            )
-        })
-        return(
-            
-            <div className="usersContainer">
-                <div>{users}</div>
-            </div>
-            
-        )
-    }
+  render() {
+    const users = this.state.allUsers.map(users => {
+      return (
+        <div className="users">
+          <div className="cell"> {users.first_name} </div>
+          <div className="cell"> {users.last_name} </div>
+          <div className="email"> {users.email} </div>
+          <div className="cell"> {users.username} </div>
+          <div className="cell"></div>
+        </div>
+      );
+    });
+    return (
+      <div className="container">
+        <div className="header">
+          <div className="cell">First Name</div>
+          <div className="cell">Last Name</div>
+          <div className="email">Email</div>
+          <div className="cell">Username</div>
+          <button className="edit" onClick={() => {this.props.updateView("updateUser")}}>Edit</button>
+        </div>  
+        <div className="usersContainer">{users}</div>
+      </div>
+    );
+  }
 }
 
 export default Users;

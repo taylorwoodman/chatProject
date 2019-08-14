@@ -2,21 +2,30 @@
 	height: 100vh;
 	width: 100vw;
     background: #7E8987;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Red Hat Display', sans-serif;
     overflow-x: hidden; 
     overflow-y: hidden;
+    background: url('754632.jpg');
+    background-repeat: none;
+    background-size: 100%;
+    color: white;
 }
 
-.button{
+.submit{
     cursor: pointer;
-    width: 100px;
-	height: 50px;
-	margin: 3px;
+    width: 275px;
+    height: 60px;
     font-size: 20px;
     font-weight: 400;
-    border-radius: 33px;
-	background: #7E8987;
     border: 1px solid black;
     outline: none;
     color: white;
+    background: #1C3144;
+    margin: 30px;
+    border-radius: 10px;
+
+}
+
+.submit:hover{
+    text-decoration: underline;
 }
