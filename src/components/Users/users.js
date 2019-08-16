@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./users.css";
 
 class Users extends React.Component {
@@ -41,7 +42,9 @@ class Users extends React.Component {
           <div className="cell">Last Name</div>
           <div className="email">Email</div>
           <div className="cell">Username</div>
-          <button className="edit" onClick={() => {this.props.updateView("updateUser")}}>Edit</button>
+          <Link to="/updateUsers">
+          <button className="edit">Edit</button>
+          </Link>
         </div>  
         <div className="usersContainer">{users}</div>
       </div>

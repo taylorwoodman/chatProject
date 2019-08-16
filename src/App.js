@@ -9,6 +9,7 @@ import Signup from "./components/Signup/signup";
 import Login from "./components/Login/login";
 import Home from "./components/Home/home";
 import UserHome from "./components/userHome/userHome";
+import UpdateUsers from "./components/updateUsers/updateUsers";
 import "./App.css";
 import axios from "axios";
 
@@ -45,7 +46,12 @@ class AuthenticatedRoutes extends React.Component {
               <UserHome user={this.props.user} updateUser={this.props.updateUser} />
           )}
         />
-
+        <Route
+          path="/updateUsers"
+          render={() => (
+            <UpdateUsers user={this.props.user} updateUser={this.props.updateUser} />
+          )}
+        />
       </div>
     );
   }
@@ -66,6 +72,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log(this.state.user)
     return (
       <div className="App">
         <Router>

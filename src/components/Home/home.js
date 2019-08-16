@@ -2,18 +2,10 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Users from "../Users/users";
-import UpdateUsers from "../updateUsers/updateUsers";
 import "./home.css";
 
 class Home extends React.Component {
-constructor(){
-  super()
 
-  this.state = {
-    view: 'displayUsers'
-  }
-  this.updateView = this.updateView.bind(this)
-}
 
   componentDidMount = () => {
     axios.get("/users").then(response => {
@@ -25,22 +17,7 @@ constructor(){
     axios.get("/logout");
   }
 
-  updateView(name){
-    this.setState({view: name})
-  }
-
-  displayUsers(){
-    return (
-    <Users updateView = {this.updateView} />
-    )
-  }
-
-  updateUsers(){
-    return(
-    <UpdateUsers updateView = {this.updateView}/>
-    )
-  }
-
+ 
   render() {
     if (!this.props.user) return "user not found";
 
@@ -63,8 +40,7 @@ constructor(){
             <button className="submit" onClick={this.handleLogout}>Logout</button>
           </Link>
         </div>
-        {this.state.view === "displayUsers" ? this.displayUsers() : null}
-        {this.state.view === "updateUser" ? this.updateUsers() : null}
+        <Users />
       </div>
     );
   }

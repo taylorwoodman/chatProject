@@ -34,9 +34,10 @@ class Signup extends React.Component {
         user.password &&
         user.username
       ) {
-        await alert("User created!");
-        axios.post("http://localhost:8080/signup", user);
-        this.setState({ firstName: "", lastName: "", email: "", password: "" });
+        await
+        axios.post("/signup", user);
+        this.setState({ firstName: "", lastName: "", email: "", password: "", username: "" });
+        alert("User created!")
         this.props.history.push("/login");
       } else {
         alert("User not created. Please fill out all fields and try again!");
@@ -91,9 +92,11 @@ class Signup extends React.Component {
             onChange={this.handleInput}
           />
           <div className="buttons">
+            <Link to="/login">
             <button className="submit" onClick={this.handleSignUp}>
               Sign up!
             </button>
+            </Link>
             <Link to="/login">
               <button className="submit">Return to login</button>
             </Link>
