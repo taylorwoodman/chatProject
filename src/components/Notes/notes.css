@@ -1,0 +1,6 @@
+.notesContainer{
+  height: 100vh;
+  width: calc(100vw - 350px);
+  border: 1px solid black;
+  background: radial-gradient(red, cyan)
+}

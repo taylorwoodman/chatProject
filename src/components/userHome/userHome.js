@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Notes from "../Notes/notes";
 
 class UserHome extends React.Component {
   componentDidMount = () => {
@@ -35,7 +36,7 @@ class UserHome extends React.Component {
             <button className="submit" onClick={this.handleLogout}>Logout</button>
           </Link>
         </div>
-        Hello! Unfortunately, you are not an admin.
+        <Notes />
       </div>
     );
   }

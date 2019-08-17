@@ -8,19 +8,19 @@ class Login extends React.Component {
     super();
 
     this.state = {
-      email: "",
-      password: ""
+      password: "",
+      username: ""
     };
   }
 
   handleLogin = async () => {
     try {
       const body = {
-        email: this.state.email,
-        password: this.state.password
+        password: this.state.password,
+        username: this.state.username
       };
 
-      if (body.email && body.password) {
+      if (body.username && body.password) {
         axios.post("/login", body).then((response, req) => {
           console.log(response);
           
@@ -54,10 +54,10 @@ class Login extends React.Component {
         <div className="login">
           <input
             className="input"
-            placeholder="email"
+            placeholder="username"
             type="text"
-            name="email"
-            value={this.state.email}
+            name="username"
+            value={this.state.username}
             onChange={this.handleChange}
           />
           <input
