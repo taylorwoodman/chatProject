@@ -48,4 +48,4 @@ class UpdateUserRow extends React.Component{
   }
 }
 
-export default UpdateUserRow
+export default UpdateUserRow;

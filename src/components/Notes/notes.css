@@ -4,3 +4,9 @@
   border: 1px solid black;
   background: radial-gradient(red, cyan)
 }
+
+.singleNote{
+  height: 200px;
+  width: 300px;
+  margin: 10px;
+}

@@ -5,7 +5,9 @@ import Notes from "../Notes/notes";
 
 class UserHome extends React.Component {
   componentDidMount = () => {
+
     axios.get("/users").then(response => {
+      console.log(response.data)
       this.props.updateUser(response.data);
     });
   };

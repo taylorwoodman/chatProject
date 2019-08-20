@@ -31,7 +31,7 @@ class AuthenticatedRoutes extends React.Component {
   }
 
   render() {
-    if (!this.state.authenticated) return null
+    if (!this.state.authenticated) return null;
     return (
       <div>
         <Route
@@ -43,13 +43,19 @@ class AuthenticatedRoutes extends React.Component {
         <Route
           path="/userHome"
           render={() => (
-              <UserHome user={this.props.user} updateUser={this.props.updateUser} />
+            <UserHome
+              user={this.props.user}
+              updateUser={this.props.updateUser}
+            />
           )}
         />
         <Route
           path="/updateUsers"
           render={() => (
-            <UpdateUsers user={this.props.user} updateUser={this.props.updateUser} />
+            <UpdateUsers
+              user={this.props.user}
+              updateUser={this.props.updateUser}
+            />
           )}
         />
       </div>
@@ -72,7 +78,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.user)
     return (
       <div className="App">
         <Router>

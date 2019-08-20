@@ -24,13 +24,13 @@ class Users extends React.Component {
   }
 
   render() {
-    const users = this.state.allUsers.map(users => {
+    const users = this.state.allUsers.map((user, i) => {
       return (
-        <div className="users">
-          <div className="cell"> {users.first_name} </div>
-          <div className="cell"> {users.last_name} </div>
-          <div className="email"> {users.email} </div>
-          <div className="cell"> {users.username} </div>
+        <div className="users" key={i}>
+          <div className="cell"> {user.first_name} </div>
+          <div className="cell"> {user.last_name} </div>
+          <div className="email"> {user.email} </div>
+          <div className="cell"> {user.username} </div>
           <div className="cell"></div>
         </div>
       );
