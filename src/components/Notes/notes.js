@@ -21,18 +21,23 @@ class Notes extends React.Component {
     .catch(console.error)
   }
 
+  handleChange = e => this.setState({ text: e.target.value });
+
+
   handleCreate = () => {
-    return <div><SingleNote /></div>
+    return <SingleNote />
   }
 
   render() {
     
     const notesList = this.state.allNotes.map((note, i) => {
+      console.log(note)
       return (
-        <div>
+        <div key={i}>
       <SingleNote
       key={i}
       note={note}
+      text={note.note}
       allNotes={this.state.allNotes}
       />
       </div>
@@ -44,8 +49,6 @@ class Notes extends React.Component {
         onClick={this.handleCreate}
         >New Note
         </button>
-        <SingleNote />
-        <SingleNote />
         <div>{notesList}</div>
       </div>
     );

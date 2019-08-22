@@ -33,7 +33,11 @@ class Home extends React.Component {
             {" " + this.props.user.first_name + " " + this.props.user.last_name}
           </div>
           <div className="homeInfo">
-            Username:{" " + this.props.user.username}
+            Username: {this.props.user.username}
+          </div>
+          <div className="homeInfo1">Email:</div> 
+          <div className="homeInfo1">
+            {this.props.user.email}
           </div>
 
           <Link to="/login">

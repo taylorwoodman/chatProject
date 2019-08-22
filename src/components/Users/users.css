@@ -39,7 +39,7 @@
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
-    width: 400px;
+    width: 430px;
     height: 40px;
     font-size: 25px;
     border-bottom: 1px solid black;
@@ -57,6 +57,7 @@
     color: white;
     background: #1C3144;
     border-radius: 10px;
+    
 }
 
 .edit:hover{

@@ -3,13 +3,15 @@ import axios from "axios";
 import "./notes.css";
 
 class SingleNote extends React.Component {
-  constructor() {
-    super();
+// constructor(){
+//   super()
 
-    this.state = {
-      text: ''
-    };
-  }
+//   this.state = {
+//     text: this.props.text
+//   }
+// }  
+
+  
 
   handleNew(){
     axios.post("/notes")
@@ -40,7 +42,7 @@ class SingleNote extends React.Component {
         <div>
         <textarea
           placeholder="Enter Text"
-          value={this.state.text}
+          value={this.props.text}
           onChange={this.handleChange}
           className="text"
           cols="33"

@@ -11,7 +11,7 @@ class UpdateUserRow extends React.Component{
       firstName: props.users.first_name,
       lastName: props.users.last_name,
       email: props.users.email,
-      username: props.users.username
+      username: props.users.username,
     }
   }
 
@@ -41,6 +41,7 @@ class UpdateUserRow extends React.Component{
                 onChange={(e) => this.handleChange(e)} 
                 value={this.state.username}
                 />
+                
                 <button className="delete" onClick={() => this.props.handleDelete(this.state.id)}>Delete</button>
                 <button className="save" onClick={() => this.props.handleSubmit(this.state)}>Save</button>
               </div>
