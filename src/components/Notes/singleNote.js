@@ -3,46 +3,49 @@ import axios from "axios";
 import "./notes.css";
 
 class SingleNote extends React.Component {
-// constructor(){
-//   super()
-
-//   this.state = {
-//     text: this.props.text
-//   }
-// }  
+  constructor(props){
+    super(props)
+    
+    this.state = {
+      text: props.note.note
+    }
+  }
 
   
 
-  handleNew(){
-    axios.post("/notes")
-    .then(() => axios.get("/notes"))
-    .then(response => this.setState({ allNotes: response.data }))
-    .catch(console.error)
-  }
-
   handleSave = (id, text) => {
-    axios.put(`/updateNote/${id}`, { note: text })
+    console.log(text)
+    const body = {
+      note: text
+    }
+
+    axios.put(`/updateNote/${id}`, body)
     .then(() => axios.get("/notes"))
     .then(response => this.setState({ allNotes: response.data }))
     .catch(console.error)
   }
 
   handleDelete = (id) => {
+    console.log(id)
     axios.delete(`/deleteNote/${id}`)
     .then(() => axios.get("/notes"))
     .then(response => this.setState({ allNotes: response.data }))
     .catch(console.error)
   }
 
-  handleChange = e => this.setState({ text: e.target.value });
+  handleChange = e => {
+    console.log(e)
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
   render() {
     return (
       <div className="singleNote">
         <div>
         <textarea
+          name="text"
           placeholder="Enter Text"
-          value={this.props.text}
+          value={this.state.text}
           onChange={this.handleChange}
           className="text"
           cols="33"
@@ -50,14 +53,14 @@ class SingleNote extends React.Component {
         />
         <button
           className="delete"
-          onClick={() => this.handleDelete(this.props.note.id)}
+          onClick={() => this.handleDelete(this.props.id.id)}
         >
           Delete
         </button>
         <button
           className="save"
           onClick={() =>
-            this.handleSave(this.props.note.id, this.state.text)
+            this.handleSave(this.props.id.id, this.state.text)
           }
         >
           Save

@@ -1,11 +1,26 @@
-.notesContainer{
+.container{
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   width: calc(100vw - 350px);
-  border: 1px solid black;
+  
+}
+
+.notesContainer{
+  display: flex;
+  width: calc(100vw - 350px);
+  height: 500px;
+  margin: 20px;
+  flex-wrap: wrap;
+  overflow: auto;
 }
 
 .singleNote{
   height: 200px;
   width: 300px;
   margin: 10px;
+}
+
+.notes{
+  display: flex
 }

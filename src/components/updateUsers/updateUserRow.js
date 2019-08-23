@@ -7,11 +7,11 @@ class UpdateUserRow extends React.Component{
     super(props)
     
     this.state = {
-      id: props.users.id,
-      firstName: props.users.first_name,
-      lastName: props.users.last_name,
-      email: props.users.email,
-      username: props.users.username,
+      id: props.user.id,
+      firstName: props.user.first_name,
+      lastName: props.user.last_name,
+      email: props.user.email,
+      username: props.user.username,
     }
   }
 

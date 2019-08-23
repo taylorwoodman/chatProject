@@ -24,9 +24,9 @@ class Users extends React.Component {
   }
 
   render() {
-    const users = this.state.allUsers.map((user, i) => {
+    const users = this.state.allUsers.map((user) => {
       return (
-        <div className="users" key={i}>
+        <div className="users" key={user.id}>
           <div className="cell"> {user.first_name} </div>
           <div className="cell"> {user.last_name} </div>
           <div className="email"> {user.email} </div>

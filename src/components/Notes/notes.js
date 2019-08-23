@@ -12,7 +12,7 @@ class Notes extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     axios.get("/notes")
     .then(response => {
       console.log(response.data)
@@ -21,21 +21,24 @@ class Notes extends React.Component {
     .catch(console.error)
   }
 
-  handleChange = e => this.setState({ text: e.target.value });
-
-
   handleCreate = () => {
-    return <SingleNote />
+    const body = {
+      user_id: this.props.id,
+    }
+    axios.post("/addNote", body)
+    .then(response => this.setState({allNotes: response.data}))
+    .catch(console.error)
   }
 
   render() {
-    
-    const notesList = this.state.allNotes.map((note, i) => {
+    if(!this.props.id) return "Loading..."
+    console.log(this.state.allNotes)
+    const notesList = this.state.allNotes.map((note) => {
       console.log(note)
       return (
-        <div key={i}>
+        <div key={note.id} className="notes">
       <SingleNote
-      key={i}
+      id={note}
       note={note}
       text={note.note}
       allNotes={this.state.allNotes}
@@ -43,13 +46,13 @@ class Notes extends React.Component {
       </div>
     )})
     return (
-      <div className="notesContainer">
+      <div className="container">
         <button
         className="edit"
         onClick={this.handleCreate}
         >New Note
         </button>
-        <div>{notesList}</div>
+        <div className="notesContainer">{notesList}</div>
       </div>
     );
   }

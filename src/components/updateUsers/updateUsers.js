@@ -53,9 +53,9 @@ class UpdateUsers extends React.Component{
 
     render(){
       console.log(this.state)
-        const users = this.state.allUsers.map(users => {
+        const users = this.state.allUsers.map(user => {
             return (
-              <UpdateUserRow users={users} handleDelete={this.handleDelete} handleSubmit={this.handleSubmit} />
+              <UpdateUserRow key={user.id} user={user} handleDelete={this.handleDelete} handleSubmit={this.handleSubmit} />
             );
         });
         return(

@@ -4,10 +4,16 @@ import axios from "axios";
 import Notes from "../Notes/notes";
 
 class UserHome extends React.Component {
+
+  state = {
+    id: ''
+  }
+
   componentDidMount = () => {
 
     axios.get("/users").then(response => {
       console.log(response.data)
+      this.setState({id: response.data.id})
       this.props.updateUser(response.data);
     });
   };
@@ -42,7 +48,7 @@ class UserHome extends React.Component {
             <button className="submit" onClick={this.handleLogout}>Logout</button>
           </Link>
         </div>
-        <Notes />
+        <Notes id={this.state.id}/>
       </div>
     );
   }
