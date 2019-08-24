@@ -16,11 +16,60 @@
 }
 
 .singleNote{
-  height: 200px;
+  display:flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 250px;
   width: 300px;
-  margin: 10px;
+  margin: 20px;
 }
 
 .notes{
   display: flex
+}
+
+.text{
+  height: 250px;
+  width: 300px;
+  background: yellow;
+  box-shadow: 5px 5px 15px black
+}
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.delete1{
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  border: 1px solid black;
+  outline: none;
+  color: white;
+  background: #1C3144;
+  border-radius: 10px;
+}
+.save1{
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  border: 1px solid black;
+  outline: none;
+  color: white;
+  background: #1C3144;
+  border-radius: 10px;
+
+}
+
+.delete1:hover{
+  text-decoration: underline
+}
+.save1:hover{
+  text-decoration: underline
 }

@@ -22,14 +22,12 @@ class Login extends React.Component {
 
       if (body.username && body.password) {
         axios.post("/login", body).then((response, req) => {
-          console.log(response);
           
           axios.get("/loggedIn").then(response => {
             this.props.updateUser(response.data);
           });
 
           if (response.data.admin && response.data.owner === true) {
-            console.log(response.data)
 
             this.props.history.push("/home");
           } else {

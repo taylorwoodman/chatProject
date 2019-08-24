@@ -12,19 +12,18 @@ class UserHome extends React.Component {
   componentDidMount = () => {
 
     axios.get("/users").then(response => {
-      console.log(response.data)
       this.setState({id: response.data.id})
       this.props.updateUser(response.data);
     });
   };
 
-    handleLogout() {
-        axios.get("/logout");
-      }
+
+  handleLogout = () => {
+      axios.get("/logout");
+    }
 
   render() {
     if (!this.props.user) return "user not found";
-
     return (
       <div className="parentHome">
         <div className="sideBar">

@@ -15,7 +15,6 @@ class Notes extends React.Component {
   componentDidMount = () => {
     axios.get("/notes")
     .then(response => {
-      console.log(response.data)
       this.setState({ allNotes: response.data })
     })
     .catch(console.error)
@@ -30,11 +29,13 @@ class Notes extends React.Component {
     .catch(console.error)
   }
 
+  updateNotes = (notes) => {
+    this.setState({allNotes: notes})
+  }
+
   render() {
     if(!this.props.id) return "Loading..."
-    console.log(this.state.allNotes)
     const notesList = this.state.allNotes.map((note) => {
-      console.log(note)
       return (
         <div key={note.id} className="notes">
       <SingleNote
@@ -42,6 +43,7 @@ class Notes extends React.Component {
       note={note}
       text={note.note}
       allNotes={this.state.allNotes}
+      updateNotes={this.updateNotes}
       />
       </div>
     )})

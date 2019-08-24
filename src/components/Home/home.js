@@ -6,7 +6,6 @@ import "./home.css";
 
 class Home extends React.Component {
 
-
   componentDidMount = () => {
     axios.get("/users").then(response => {
       this.props.updateUser(response.data);
@@ -17,10 +16,10 @@ class Home extends React.Component {
     axios.get("/logout");
   }
 
+
  
   render() {
     if (!this.props.user) return "user not found";
-
     return (
       <div className="parentHome">
         <div className="sideBar">
@@ -39,6 +38,7 @@ class Home extends React.Component {
           <div className="homeInfo1">
             {this.props.user.email}
           </div>
+
 
           <Link to="/login">
             <button className="submit" onClick={this.handleLogout}>Logout</button>

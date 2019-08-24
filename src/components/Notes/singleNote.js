@@ -14,34 +14,31 @@ class SingleNote extends React.Component {
   
 
   handleSave = (id, text) => {
-    console.log(text)
     const body = {
       note: text
     }
-
+    
     axios.put(`/updateNote/${id}`, body)
     .then(() => axios.get("/notes"))
-    .then(response => this.setState({ allNotes: response.data }))
+    .then(response => {alert('Note saved!')
+    this.props.updateNotes(response.data)})
     .catch(console.error)
   }
 
   handleDelete = (id) => {
-    console.log(id)
     axios.delete(`/deleteNote/${id}`)
     .then(() => axios.get("/notes"))
-    .then(response => this.setState({ allNotes: response.data }))
+    .then(response => this.props.updateNotes(response.data))
     .catch(console.error)
   }
 
   handleChange = e => {
-    console.log(e)
     this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
     return (
       <div className="singleNote">
-        <div>
         <textarea
           name="text"
           placeholder="Enter Text"
@@ -50,15 +47,17 @@ class SingleNote extends React.Component {
           className="text"
           cols="33"
           rows="5"
+          
         />
+        <div className="buttons">
         <button
-          className="delete"
+          className="delete1"
           onClick={() => this.handleDelete(this.props.id.id)}
         >
           Delete
         </button>
         <button
-          className="save"
+          className="save1"
           onClick={() =>
             this.handleSave(this.props.id.id, this.state.text)
           }
