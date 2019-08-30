@@ -22,6 +22,20 @@ class UserHome extends React.Component {
       axios.get("/logout");
     }
 
+    // fizzBuzz = () => {
+    //   for(let i = 0; i <= 100; i++){
+    //     if(i % 3 === 0 && i % 5 === 0){
+    //       console.log(i + " Fizz Buzz")
+    //     }
+    //     else if(i % 3 === 0){
+    //       console.log(i + " Fizz")
+    //     }
+    //     else if(i % 5 === 0){
+    //       console.log(i + " Buzz")
+    //     }
+    //   }
+    // }
+
   render() {
     if (!this.props.user) return "user not found";
     return (
@@ -42,6 +56,7 @@ class UserHome extends React.Component {
           <div className="homeInfo1">
             {this.props.user.email}
           </div>
+          {/* <button onClick={this.fizzBuzz}>Fizz Buzz</button> */}
 
           <Link to="/login">
             <button className="submit" onClick={this.handleLogout}>Logout</button>

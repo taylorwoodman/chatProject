@@ -18,39 +18,32 @@ class AuthenticatedRoutes extends React.Component {
     super();
 
     this.state = {
-      authenticated: false
+      admin: false
     };
   }
 
   async componentDidMount() {
-    const { data: authenticated } = await axios.get("/isAuth");
-    if (!authenticated) {
+    const { data: admin } = await axios.get("/isAdmin");
+    
+    if (!admin) {
       return this.props.history.push("/login");
     }
-    return this.setState({ authenticated });
+    this.setState({ admin});
+
   }
 
   render() {
-    if (!this.state.authenticated) return null;
+    if (!this.state.admin) return null;
     return (
       <div>
         <Route
-          path="/home"
+          path="/admin/home"
           render={() => (
             <Home user={this.props.user} updateUser={this.props.updateUser} />
           )}
         />
         <Route
-          path="/userHome"
-          render={() => (
-            <UserHome
-              user={this.props.user}
-              updateUser={this.props.updateUser}
-            />
-          )}
-        />
-        <Route
-          path="/updateUsers"
+          path="/admin/updateUsers"
           render={() => (
             <UpdateUsers
               user={this.props.user}
@@ -63,6 +56,42 @@ class AuthenticatedRoutes extends React.Component {
   }
 }
 AuthenticatedRoutes = withRouter(AuthenticatedRoutes);
+
+class AuthenticatedUserRoutes extends React.Component{
+  constructor(){
+    super();
+
+    this.state  = {
+      authenticated: false
+    }
+  }
+
+  async componentDidMount() {
+    const { data: authenticated } = await axios.get("/isAuth");
+    if (!authenticated) {
+      return this.props.history.push("/login");
+    }
+    return this.setState({ authenticated });
+  }
+
+  render(){
+    if (!this.state.authenticated) return null;
+    return(
+      <Route
+          path="/user/home"
+          render={() => (
+            <UserHome
+              user={this.props.user}
+              updateUser={this.props.updateUser}
+            />
+          )}
+        />
+    )
+  }
+
+}
+
+AuthenticatedUserRoutes = withRouter(AuthenticatedUserRoutes)
 
 class App extends React.Component {
   constructor() {
@@ -96,8 +125,18 @@ class App extends React.Component {
                 <Login user={this.state.user} updateUser={this.updateUser} />
               )}
             />
+            
             <Route
-              path="/"
+              path="/user"
+              render={() => (
+                <AuthenticatedUserRoutes
+                  user={this.state.user}
+                  updateUser={this.updateUser}
+                />
+              )}
+            />
+            <Route
+              path="/admin"
               render={() => (
                 <AuthenticatedRoutes
                   user={this.state.user}

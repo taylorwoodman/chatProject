@@ -1,6 +1,6 @@
 .parentLogin {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 100vw;
     height: 100vh;
 }
@@ -11,8 +11,8 @@
     height: 600px;
     width: 500px;
     flex-direction: column;
-    background: rgb(255, 255, 255, .5);
-    box-shadow: 5px 3px 5px black;
+    background: rgb(0, 0, 0, .5);
+    box-shadow: 7px 7px 13px rgba(0, 0, 0, 0.356);
     align-items: center;
     justify-content: center;
     margin-top: 30px;
@@ -29,12 +29,23 @@
     border-radius: 33px;
     margin: 50px;
     padding-left: 25px;
-    background: transparent;
     border: 1px solid black;
     outline: none;
     border-radius: 10px;
+    background: rgb(0, 0, 0, .5);
+    color: white;
 }
 
 .submit:hover{
    text-decoration: underline
+}
+
+.title{
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+    width: 700px;
+    align-items: center;
+    font-size: 100px;
+    margin: 20px;
 }

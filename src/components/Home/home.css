@@ -12,8 +12,9 @@
 .sideBar{
     width: 350px;
     height: 100vh;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.25);
     font-size: 25px;
+    color: white;
 }
 
 .currentUser{
@@ -48,4 +49,7 @@
     overflow-y: hidden;
     justify-content: center;
     align-items: center;
+    padding: none;
+    width: 100vw;
+    height: 100vh;
 }

@@ -3,6 +3,16 @@ import axios from "axios";
 import { Link, withRouter } from "react-router-dom";
 import "./login.css";
 
+
+function Welcome(){
+  return(
+    <div className="title">
+      <h1>Welcome!</h1>
+      <p>Let's take some notes.</p>
+    </div>
+  )
+}
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -21,18 +31,14 @@ class Login extends React.Component {
       };
 
       if (body.username && body.password) {
-        axios.post("/login", body).then((response, req) => {
+        axios.post("/login", body).then((response) => {
           
-          axios.get("/loggedIn").then(response => {
             this.props.updateUser(response.data);
-          });
-
           if (response.data.admin && response.data.owner === true) {
-
-            this.props.history.push("/home");
+            this.props.history.push("/admin/home");
           } else {
-
-            this.props.history.push("/userHome");
+            
+            this.props.history.push("/user/home");
           }
         });
       } else {
@@ -49,6 +55,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="parentLogin">
+        <Welcome />
         <div className="login">
           <input
             className="input"

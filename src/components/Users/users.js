@@ -42,7 +42,7 @@ class Users extends React.Component {
           <div className="cell">Last Name</div>
           <div className="email">Email</div>
           <div className="cell">Username</div>
-          <Link to="/updateUsers">
+          <Link to="/admin/updateUsers">
           <button className="edit">Edit</button>
           </Link>
         </div>  

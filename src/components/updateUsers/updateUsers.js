@@ -87,7 +87,7 @@ class UpdateUsers extends React.Component {
             <div className="cell">Last Name</div>
             <div className="email">Email</div>
             <div className="cell">Username</div>
-            <Link to="/home">
+            <Link to="/admin/home">
               <button className="edit">Done</button>
             </Link>
           </div>

@@ -39,6 +39,12 @@ class SingleNote extends React.Component {
   render() {
     return (
       <div className="singleNote">
+        <button
+          className="delete1"
+          onClick={() => this.handleDelete(this.props.id.id)}
+        >
+          X
+        </button>
         <textarea
           name="text"
           placeholder="Enter Text"
@@ -50,12 +56,6 @@ class SingleNote extends React.Component {
           
         />
         <div className="buttons">
-        <button
-          className="delete1"
-          onClick={() => this.handleDelete(this.props.id.id)}
-        >
-          Delete
-        </button>
         <button
           className="save1"
           onClick={() =>
