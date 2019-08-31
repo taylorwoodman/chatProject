@@ -14,7 +14,7 @@
     flex-direction: column;
     overflow-y: auto;
     font-size: 25px;
-    color: black;
+    color: white;
     background: rgba(255, 255, 255, 0.25);
     padding: 5px;
 }
@@ -53,9 +53,9 @@
     font-size: 20px;
     font-weight: 400;
     outline: none;
-    color: black;
+    color: white;
     border-radius: 4px;
-    background: rgb(9, 214, 153);
+    background: rgb(9, 105, 214);
     -webkit-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
     -moz-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
     box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
@@ -65,7 +65,7 @@
 }
 
 .edit:hover{
-    background: rgb(10, 240, 171);
+    background: rgb(43, 123, 214);
     transition: .5s
 }
 

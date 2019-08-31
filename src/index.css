@@ -46,3 +46,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+::placeholder{
+	color: rgba(255, 255, 255, 0.664);
+}
+
+.text::placeholder{
+	color: rgba(0, 0, 0, 0.479);
+}

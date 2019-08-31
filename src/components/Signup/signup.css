@@ -10,7 +10,7 @@
     flex-wrap: wrap;
     height: 600px;
     width: 1000px;
-    background: rgba(255, 255, 255, 0.25);
+    background: #2892D7;
     -webkit-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
     -moz-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
     box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
@@ -29,5 +29,6 @@
     padding-left: 25px;
     background: transparent;
     outline: none;
+    border: 1px solid black;
 }
     

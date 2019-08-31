@@ -56,7 +56,7 @@
   font-size: 20px;
   font-weight: 400;
   outline: none;
-  color: black;
+  color: white;
   background: rgb(250, 21, 21);
   border-radius: 180px;
   align-self: flex-end;
@@ -75,8 +75,8 @@
   font-size: 20px;
   font-weight: 400;
   outline: none;
-  color: black;
-  background: rgb(9, 214, 153);
+  color: white;
+  background: rgb(9, 105, 214);
   border-radius: 4px;
   font-family: 'Roboto Condensed', sans-serif;
   -webkit-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
@@ -91,6 +91,6 @@
   transition: .5s
 }
 .save1:hover{
-  background: rgb(10, 240, 171);
+  background: rgb(43, 123, 214);
   transition: .5s
 }

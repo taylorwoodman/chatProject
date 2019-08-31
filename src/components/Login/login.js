@@ -23,6 +23,8 @@ class Login extends React.Component {
     };
   }
 
+
+
   handleLogin = async () => {
     try {
       const body = {
@@ -50,7 +52,14 @@ class Login extends React.Component {
     }
   };
 
+  
   handleChange = e => this.setState({ [e.target.name]: e.target.value });
+  
+  handleEnter = (e) => {
+    if (e.which === 13) {
+        this.handleLogin();
+    }
+}
 
   render() {
     return (
@@ -64,6 +73,7 @@ class Login extends React.Component {
             name="username"
             value={this.state.username}
             onChange={this.handleChange}
+            onKeyPress={this.handleEnter}
           />
           <input
             className="input"
@@ -72,6 +82,7 @@ class Login extends React.Component {
             name="password"
             value={this.state.password}
             onChange={this.handleChange}
+            onKeyPress={this.handleEnter}
           />
           <button className="submit" onClick={this.handleLogin}>
             Login
