@@ -43,7 +43,7 @@ class Login extends React.Component {
         });
       } else {
         alert("Login incorrect");
-        this.props.history.push("/");
+        this.props.history.push("/login");
       }
     } catch (error) {
       console.error(error);

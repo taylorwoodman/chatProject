@@ -11,14 +11,14 @@
     height: 600px;
     width: 500px;
     flex-direction: column;
-    background: rgb(0, 0, 0, .5);
-    box-shadow: 7px 7px 13px rgba(0, 0, 0, 0.356);
+    background: #D7E8BA;
+    -webkit-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
     align-items: center;
     justify-content: center;
     margin-top: 30px;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 .input{
@@ -31,13 +31,14 @@
     padding-left: 25px;
     border: 1px solid black;
     outline: none;
-    border-radius: 10px;
-    background: rgb(0, 0, 0, .5);
-    color: white;
+    border-radius: 4px;
+    background: transparent;
+    color: black;
 }
 
 .submit:hover{
-   text-decoration: underline
+    background: rgb(9, 214, 153);
+    transition: .5s
 }
 
 .title{

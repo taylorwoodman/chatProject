@@ -38,7 +38,10 @@ class Home extends React.Component {
           <div className="homeInfo1">
             {this.props.user.email}
           </div>
-
+          <Link to="/user/home">
+            <button className="submit">Notes</button>
+          </Link>
+        
 
           <Link to="/login">
             <button className="submit" onClick={this.handleLogout}>Logout</button>

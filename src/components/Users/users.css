@@ -15,7 +15,7 @@
     overflow-y: auto;
     font-size: 25px;
     color: black;
-    background: rgb(0, 0, 0, .25);
+    background: rgba(255, 255, 255, 0.25);
     padding: 5px;
 }
 
@@ -52,16 +52,21 @@
     height: 40px;
     font-size: 20px;
     font-weight: 400;
-    border: 1px solid black;
     outline: none;
-    color: white;
-    border-radius: 10px;
-    background: rgb(18, 114, 199);
+    color: black;
+    border-radius: 4px;
+    background: rgb(9, 214, 153);
+    -webkit-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    border-style: none;
+
 
 }
 
 .edit:hover{
-    text-decoration: underline
+    background: rgb(10, 240, 171);
+    transition: .5s
 }
 
 .header{
@@ -69,4 +74,10 @@
     flex-direction: row;
     width: 1175px;
     height: 50px;
+}
+
+@media (min-width: 1700px){
+    .container {
+        margin: 150px
+    }
 }

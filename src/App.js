@@ -26,7 +26,8 @@ class AuthenticatedRoutes extends React.Component {
     const { data: admin } = await axios.get("/isAdmin");
     
     if (!admin) {
-      return this.props.history.push("/login");
+      console.log(this.props.history)
+      return this.props.history.goBack();
     }
     this.setState({ admin});
 
@@ -121,6 +122,13 @@ class App extends React.Component {
             <Route
               exact
               path="/login"
+              render={() => (
+                <Login user={this.state.user} updateUser={this.updateUser} />
+              )}
+            />
+            <Route
+              
+              exact path="/"
               render={() => (
                 <Login user={this.state.user} updateUser={this.updateUser} />
               )}

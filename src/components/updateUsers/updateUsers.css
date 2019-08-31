@@ -21,8 +21,8 @@ flex-direction: row;
     flex-direction: column;
     overflow-y: auto;
     font-size: 25px;
-    color: white;
-    background: rgb(0, 0, 0, .25);
+    color: black;
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .input{
@@ -35,8 +35,7 @@ flex-direction: row;
     padding-left: 25px;
     border: 1px solid black;
     outline: none;
-    border-radius: 10px;
-    color: white;
+    border-radius: 4px;
     font-family: 'Roboto Condensed', sans-serif;
 
 }
@@ -54,32 +53,43 @@ flex-direction: row;
     height: 40px;
     font-size: 20px;
     font-weight: 400;
-    border: 1px solid black;
     outline: none;
-    color: white;
+    color: black;
     background: rgb(212, 21, 21);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    -webkit-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    border-style: none;
+
 }
+
 .save{
     cursor: pointer;
     width: 100px;
     height: 40px;
     font-size: 20px;
     font-weight: 400;
-    border: 1px solid black;
     outline: none;
-    color: white;
-    background: rgb(18, 114, 199);
+    color: black;
+    background: rgb(9, 214, 153);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    -webkit-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    box-shadow: 7px 0px 33px -14px rgba(0,0,0,0.75);
+    border-style: none;
+
 }
 
 .delete:hover{
-    text-decoration: underline
+    background: rgb(245, 29, 29);
+    transition: .5s
 }
 .save:hover{
-    text-decoration: underline
+    background: rgb(10, 240, 171);
+    transition: .5s
 }
 
 .cell1{
@@ -92,7 +102,7 @@ flex-direction: row;
     border: 1px solid black;
     background: transparent;
     box-shadow: none;
-    color: white;
+    color: black;
 }
 
 .email1{
@@ -105,6 +115,6 @@ flex-direction: row;
     border: 1px solid black;
     background: transparent;
     box-shadow: none;
-    color: white;
+    color: black;
 }
 

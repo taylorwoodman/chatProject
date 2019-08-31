@@ -57,7 +57,9 @@ class UserHome extends React.Component {
             {this.props.user.email}
           </div>
           {/* <button onClick={this.fizzBuzz}>Fizz Buzz</button> */}
-
+          {this.props.user.admin === true ? <Link to="/admin/home">
+            <button className="submit">Users</button>
+          </Link> : null}
           <Link to="/login">
             <button className="submit" onClick={this.handleLogout}>Logout</button>
           </Link>
