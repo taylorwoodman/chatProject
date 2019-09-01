@@ -30,6 +30,7 @@
     background: transparent;
     outline: none;
     border: 1px solid black;
+    color: white;
 }
     
 @media (min-width: 1700px){
